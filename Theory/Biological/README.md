@@ -7,9 +7,10 @@ The mammalian cochlea can be viewed as a bank of tuned filters the output of whi
 A MTF [5] expresses, as a function of frequency, the complex ratio (magnitude and phase) of the modulation in the neural response to the modulation in the acoustic stimulus. The MTF step response represents the neural response to an abrupt increase in intensity, as occurs at the onset of a tone burst or noise burst.  
 
 Steps in a functional model involve;  
-  1. Linear, bandpass filter (e.g. Gammatone),  
-  2. Compression and rectification (simulate limited dynamic range),  
-  3. Linear, "MTF" filter (whose impulse response is the derivative of the MTF step response).  
+
+1. Linear, bandpass filter (e.g. Gammatone),
+2. Compression and rectification (simulate limited dynamic range),  
+3. Linear, "MTF" filter (whose impulse response is the derivative of the MTF step response).  
 
 ### [Fourier](http://en.wikipedia.org/wiki/Fourier_transform) & [Wavelet](http://en.wikipedia.org/wiki/Wavelet) (eg Morlet) transforms
 
@@ -17,31 +18,31 @@ TBD
 
 ### [Constant-Q transform](http://en.wikipedia.org/wiki/Constant_Q_transform)
 
-Given an initial minimum frequency <img src="Theory/images/f_0.png"> for the CQT, the centre frequencies for each band can be obtained from: <img src="Theory/images/f_k.png"> where k = 0,1,… and b is the number of bins per octave.  
-The fixed ratio of centre frequency to bandwidth is then given by <img src="Theory/images/Q_cf.png">  
-The desired bandwidth of each frequency band is then obtained by choosing a window of length, where <img src="Theory/images/f_s.png"> is the sampling frequency,  
-<img src="Theory/images/N_k.png">  
+Given an initial minimum frequency <img src="../../Theory/images/f_0.png"> for the CQT, the centre frequencies for each band can be obtained from: <img src="../../Theory/images/f_k.png"> where k = 0,1,… and b is the number of bins per octave.  
+The fixed ratio of centre frequency to bandwidth is then given by <img src="../../Theory/images/Q_cf.png">  
+The desired bandwidth of each frequency band is then obtained by choosing a window of length, where <img src="../../Theory/images/f_s.png"> is the sampling frequency,  
+<img src="../../Theory/images/N_k.png">  
 The CQT is defined as
 
-<img src="Theory/images/CQT.png">
+<img src="../../Theory/images/CQT.png">
  
-Where _x(n)_ is the time domain signal and <img src="Theory/images/W_nk.png"> is a window function, such as the Hanning window, of length <img src="Theory/images/N_k_solo.png">
+Where _x(n)_ is the time domain signal and <img src="../../Theory/images/W_nk.png"> is a window function, such as the Hanning window, of length <img src="../../Theory/images/N_k_solo.png">
 
 ## Sparse shiftable kernel signal representation
 
-The signal <img src="Theory/images/x(t).png"> is encoded with a set of kernel functions, <img src="Theory/images/kernel_range.png">, that can be positioned arbitrarily and independently of time [1].  
+The signal <img src="../../Theory/images/x(t).png"> is encoded with a set of kernel functions, <img src="../../Theory/images/kernel_range.png">, that can be positioned arbitrarily and independently of time [1].  
 
 The representation with additive noise;
 
-<img src="Theory/images/x(t)_equation.png">
+<img src="../../Theory/images/x(t)_equation.png">
 
-Where <img src="Theory/images/tau_im.png"> and <img src="Theory/images/s_im.png"> are the temporal position and coefficient of the _i_ th instance of kernel <img src="Theory/images/phi_m.png">, respectively. The notation <img src="Theory/images/n_m.png"> indicates the number of instances of <img src="Theory/images/phi_m.png"> , which need not be the same across kernels. Kernels are not restricted in form or length.
+Where <img src="../../Theory/images/tau_im.png"> and <img src="../../Theory/images/s_im.png"> are the temporal position and coefficient of the _i_ th instance of kernel <img src="../../Theory/images/phi_m.png">, respectively. The notation <img src="../../Theory/images/n_m.png"> indicates the number of instances of <img src="../../Theory/images/phi_m.png"> , which need not be the same across kernels. Kernels are not restricted in form or length.
  
 A more general way of expressing this equation is in convolutional form,
 
-<img src="Theory/images/x(t)_conv_form.png">
+<img src="../../Theory/images/x(t)_conv_form.png">
  
-Where <img src="Theory/images/s_m(tau).png"> is the coefficient at time <img src="Theory/images/tau.png"> for <img src="Theory/images/phi_m.png"> 
+Where <img src="../../Theory/images/s_m(tau).png"> is the coefficient at time <img src="../../Theory/images/tau.png"> for <img src="../../Theory/images/phi_m.png"> 
 
 #### References  
 _1_ **Coding time-varying signals using sparse, shift-invariant representations.**  
@@ -62,7 +63,7 @@ Psychophysical and physiological advances in hearing (1998): 595-603
  
 The gammatone filter was introduced to describe cochlea nucleus response [9][8]. For a review see [7], and [6] for a history of cochlea filters, from Helmholtz resonance theory to the following gammatone alternatives;  
  
-##### Gammatone (GTF) <img src="Theory/images/GTF.png">
+##### Gammatone (GTF) <img src="../../Theory/images/GTF.png">
  
 Three key limitations of the GTF are as follows [7];  
   1. It is inherently nearly symmetric, while physiological measurements show a significant asymmetry in the auditory filter.  
@@ -71,25 +72,25 @@ Three key limitations of the GTF are as follows [7];
 
 Lyon presented a close relative to the GTF, which he termed as All-Pole Gammatone Filter (APGF) to highlight its similarity to and distinction from the GTF.  
  
-##### All-pole (APGF) <img src="Theory/images/APGF.png">, <img src="Theory/images/unity_gain.png"> for unity gain at DC
+##### All-pole (APGF) <img src="../../Theory/images/APGF.png">, <img src="../../Theory/images/unity_gain.png"> for unity gain at DC
  
-##### Differentiated All-pole (DAPGF) <img src="Theory/images/DAPGF.png">, <img src="Theory/images/consistency.png"> for dimensional consistency
+##### Differentiated All-pole (DAPGF) <img src="../../Theory/images/DAPGF.png">, <img src="../../Theory/images/consistency.png"> for dimensional consistency
  
-##### One-zero (OZGF) <img src="Theory/images/OZGF.png">, <img src="Theory/images/consistency.png"> for dimensional consistency
+##### One-zero (OZGF) <img src="../../Theory/images/OZGF.png">, <img src="../../Theory/images/consistency.png"> for dimensional consistency
 
 The standard LP bi-quad transfer function is;
  
-<img src="Theory/images/LP-biquad.png">
+<img src="../../Theory/images/LP-biquad.png">
 
-Where <img src="Theory/images/omega_0.png"> is the natural (or pole) frequency and Q is the quality factor.
+Where <img src="../../Theory/images/omega_0.png"> is the natural (or pole) frequency and Q is the quality factor.
  
 The frequency, where the peak gain occurs or centre frequency (CF) is related to the natural frequency and Q, is;
 
-<img src="Theory/images/omega_LP_CF.png">
+<img src="../../Theory/images/omega_LP_CF.png">
  
 Parameterized in terms of Q;
  
-<img src="Theory/images/H_LP_max.png">
+<img src="../../Theory/images/H_LP_max.png">
 
 ##### Gammachirp
 
@@ -99,13 +100,13 @@ The gammachirp filter is an extension of the gammatone with a frequency modulati
 
 The amplitude spectrum of the gammachirp can be written in terms of the gammatone as;
 
-<img src="Theory/images/gammachirp.png">
+<img src="../../Theory/images/gammachirp.png">
  
-Where <img src="Theory/images/gammachirp_beta.png">
+Where <img src="../../Theory/images/gammachirp_beta.png">
  
 The [equivalent rectangular bandwidth](http://en.wikipedia.org/wiki/Equivalent_rectangular_bandwidth) (ERB) shows the relationship between the auditory filter, frequency, and the critical bandwidth. An ERB passes the same amount of energy as the auditory filter it corresponds to and shows how it changes with input frequency. At low sound levels, the ERB is approximated by the following equation;
 
-<img src="Theory/images/ERB.png">  
+<img src="../../Theory/images/ERB.png">  
 Where the ERB is in Hz and F is the centre frequency in kHz.
 
 #### References  
